@@ -1,8 +1,8 @@
 package com.qwerfghi.hotel.entity;
 
-/**
- * Created by Павел on 22.06.2017.
- */
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum AnimalType {
     DOG("собака", "для собаки"),
     CAT("кот", "для кота"),

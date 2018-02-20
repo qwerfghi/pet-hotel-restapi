@@ -1,6 +1,8 @@
 package com.qwerfghi.hotel.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 
@@ -9,6 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "animal", schema = "hostel")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idanimal")
 public class Animal {
     private int idanimal;
     @JsonManagedReference
@@ -20,7 +23,6 @@ public class Animal {
     private boolean zootaxi;
     private boolean cut;
     private String notice;
-    private int idowner;
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -143,11 +145,6 @@ public class Animal {
 
     public void setOwner(Owner owner) {
         this.owner = owner;
-    }
-
-    @Transient
-    public int getIdowner() {
-        return owner.getIdowner();
     }
 
     @Converter

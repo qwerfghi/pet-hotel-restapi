@@ -1,5 +1,7 @@
 package com.qwerfghi.hotel.entity;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum Discount {
     ZERO("0%"), FIVE("5%"), TEN("10%"), TWENTY("20%");
 
@@ -9,6 +11,7 @@ public enum Discount {
         this.discount = discount;
     }
 
+    @JsonValue
     public String getDiscount() {
         return discount;
     }
