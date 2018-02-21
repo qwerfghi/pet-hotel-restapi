@@ -1,8 +1,6 @@
 package com.qwerfghi.hotel.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -11,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "owner", schema = "hostel")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idowner")
 public class Owner {
     private int idowner;
     private String ownerName;
